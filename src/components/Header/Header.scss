@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 3em;
+    background-color: $lightWeatherGreen;
+    &__logo{
+        width: 3em;
+    }
+    &__menu {
+        &__link{
+            text-decoration: none;
+            margin: 3vw;
+            line-height: 1em;
+            color: $darkWeatherBlue;
+            font-size: 1.2em;
+        }    
+        &__link:hover {
+            font-size: 1.4rem;
+        }
+        &__link:visited {
+            color: $darkWeatherBlue;
+        }
+    }
+}
