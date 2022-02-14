@@ -9,7 +9,7 @@ export default function Home(){
     const [city, setCity] = useState('Tel Aviv');
 
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
     dispatch(fetchWeatherAction(city));
     }, []);
@@ -21,12 +21,13 @@ export default function Home(){
         <div className='homeContainer'>
             <div className='homeContainer__search'>
                 <input 
-                onClick={() => dispatch(fetchWeatherAction(city))}
-                value={city}
-                onChange={e => setCity(e.target.value)}
+                onBlur={e => setCity(e.target.value)}
                 className='homeContainer__search__input' 
                 placeholder='Enter location'/>
-                <img className='homeContainer__search__icon' src={Search} alt='Search icon' />
+                <img 
+                className='homeContainer__search__icon' 
+                src={Search} alt='Search icon'
+                onClick={() => dispatch(fetchWeatherAction(city))} />
             </div>
             <div className='homeContainer__info'>
                 <CityInfo/>

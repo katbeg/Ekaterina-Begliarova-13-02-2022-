@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchWeatherAction } from "../../redux/slices/weatherSlices";
 
 export default function CityInfo(){
-const [city, setCity] = useState('Tel Aviv');
+// const [city, setCity] = useState('Tel Aviv');
 const [isFav, setFav] = useState(false);
 useEffect(() => {
     if(localStorage.getItem(`${city}`) != null){
@@ -21,8 +21,7 @@ useEffect(() => {
 }, []);
 
 const state = useSelector(state => state);
-const { weather, loading, error } = state;
-console.log(state);
+const { weather, city, error } = state;
 
     return(
         <div className='cityInfo'>

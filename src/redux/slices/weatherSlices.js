@@ -13,7 +13,7 @@ export const fetchWeatherAction = createAsyncThunk(
       const { data } = await axios.get(
         `${baseUrl}locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${payload}`
       );
-      return data;
+      return data.Key;
     } catch (error) {
       if (!error?.response) {
         throw error;
